@@ -12,13 +12,15 @@
     <topic name="LOTR">
         <note>
             <text>Some text
-NEW TEXT
-MORE NEW TEXT
-asdasd
-Some new text
 https://en.wikipedia.org/wiki/LOTR</text>
             <timestamp>11/03/2023 19:34:16</timestamp>
         </note>
     </topic>
-<topic name="Dog"><note><text>https://en.wikipedia.org/wiki/Dog
-Some mopre text for a dog topic</text><timestamp>11/03/2023 19:33:35</timestamp></note></topic></data>
+    <topic name="Dog">
+        <note>
+            <text>https://en.wikipedia.org/wiki/Dog
+Some more text for a dog topic</text>
+            <timestamp>11/03/2023 19:33:35</timestamp>
+        </note>
+    </topic>
+</data>

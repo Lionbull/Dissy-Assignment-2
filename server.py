@@ -31,6 +31,7 @@ with SimpleXMLRPCServer(('localhost', 8000), requestHandler=RequestHandler) as s
 
     def list_topics():
         """Returns a list of all the existing topics"""
+
         topics = []
         for child in root:
             topics.append(child.attrib)
@@ -40,10 +41,13 @@ with SimpleXMLRPCServer(('localhost', 8000), requestHandler=RequestHandler) as s
 
     def get_content_of_topic(topic):
         """Returns the content of a topic"""
+
         topic_content = []
 
         for child in root:
             if (child.attrib['name'] == topic):
+
+                # Getting the content of the topic inside the note tag
                 topic_content.append(child.find("note").find("text").text)
                 topic_content.append(child.find("note").find("timestamp").text)
 
@@ -79,6 +83,7 @@ with SimpleXMLRPCServer(('localhost', 8000), requestHandler=RequestHandler) as s
 
     def add_new_topic(topic, text, timestamp):
         """If topic that user wants does not exist, creates a new topic"""
+
         # Adding new topic to the root
         new_topic = ET.SubElement(root, 'topic', name=topic)
         new_note = ET.SubElement(new_topic, 'note')
@@ -95,6 +100,7 @@ with SimpleXMLRPCServer(('localhost', 8000), requestHandler=RequestHandler) as s
 
     def wikipedia_data_search(topic):
         """Function to search for a topic on Wikipedia"""
+        
         S = requests.Session()
 
         URL = "https://en.wikipedia.org/w/api.php"

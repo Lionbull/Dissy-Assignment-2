@@ -4,6 +4,7 @@ from datetime import datetime
 server = xmlrpc.client.ServerProxy('http://localhost:8000')
 
 def main():
+    """Main function for the client. Responsible for showing the menu and calling the functions"""
     while True:
         # Showing the menu
         print("\nMenu: ")
@@ -11,7 +12,6 @@ def main():
 
         # Listing all the existing topics
         list_existing_topics()
-
 
         if choice == "1":
             add_edit_topic()
@@ -25,16 +25,19 @@ def main():
 
 def search_wikipedia():
     """Function for initiate a search for a data on Wikipedia"""
+
     topic = input("\nWhat would you like to search in Wikipedia: ")
 
     # Getting the search results from the server
     search_results = server.wikipedia_data_search(topic)
 
+    # Checking if search result match the given topic
     if search_results[1][0] == topic:
         print(f"\n##########\nYour search page '{topic}' exists on English Wikipedia")
         print(f"\n##########\nSearch results: \n{search_results[3][0]}\n##########")
         append_choise = input("Would you like to append the search results to the existing topic? (y/n): ")
         if append_choise == "y":
+
             # Getting current date and time to create a timestamp
             timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
@@ -48,7 +51,7 @@ def search_wikipedia():
                     print(f"\n##########\nNew topic '{topic}' added to the database.\n##########")
                 else:
                     print("\n##########\nError in adding new topic to the database.\n##########")
-                    return
+                
             # Adding data to the existing topic
             else:
                 data_added = server.add_data_to_existing_topic(topic, search_results[3][0], timestamp)
@@ -61,8 +64,10 @@ def search_wikipedia():
 
         elif append_choise == "n":
             print("\n##########\nLink not appended to the existing topic.\n##########")
+
         else:
             print("\n##########\nInvalid choice. Text not appended to the existing topic.\n##########")
+
     else:
         print(f"\n##########\nYour search page '{topic}' does not exist on English Wikipedia\n##########")
 
@@ -79,6 +84,8 @@ def list_existing_topics():
 
 
 def get_content_of_topic():
+    """Function for getting the topic content"""
+
     # Getting the topic from the user
     topic = input("\nEnter the topic: ")
 
