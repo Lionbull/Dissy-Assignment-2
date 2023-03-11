@@ -1,0 +1,24 @@
+<data>
+    <topic name="Animal Things">
+        <note name="Dogs are better than cats 03">
+            <text>
+            Dogs respond when you call their name (unlike cats, who just ignore you)
+            </text>
+            <timestamp>
+            03/16/21 - 14:03:04
+            </timestamp>
+        </note>
+    </topic>
+    <topic name="LOTR">
+        <note>
+            <text>Some text
+NEW TEXT
+MORE NEW TEXT
+asdasd
+Some new text
+https://en.wikipedia.org/wiki/LOTR</text>
+            <timestamp>11/03/2023 19:34:16</timestamp>
+        </note>
+    </topic>
+<topic name="Dog"><note><text>https://en.wikipedia.org/wiki/Dog
+Some mopre text for a dog topic</text><timestamp>11/03/2023 19:33:35</timestamp></note></topic></data>
