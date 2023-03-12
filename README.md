@@ -13,4 +13,4 @@ When the server is run the "**Server started**" message should be printed in ter
 Then when the client is started the choise menu should pop up.
 
 # Youtube link
-https://youtu.be/dummytext
+https://youtu.be/DvJAAwcHq70

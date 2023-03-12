@@ -119,7 +119,7 @@ def add_edit_topic():
 
     # If topic does not exist, create a new topic
     else:
-        print("\##########\nTopic does not exist. Topic will be created.")
+        print("\n##########\nTopic does not exist. Topic will be created.")
         text = input("Enter the text: ")
 
         # Getting current date and time to create a timestamp
